@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#ff6b8b">
+    <title>生日祝福</title>
+    <style>
+        /* 关键CSS内联 */
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, sans-serif;
+            background: linear-gradient(135deg, #f9f3f3 0%, #e0c3fc 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            touch-action: manipulation;
+        }
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.5s;
+        }
+        .spinner {
+            border: 4px solid rgba(255, 107, 139, 0.3);
+            border-radius: 50%;
+            border-top: 4px solid #ff6b8b;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+<div class="loader" id="loader">
+    <div class="spinner"></div>
+</div>
+
+<div class="birthday-container">
+    <div id="confetti"></div>
+
+    <main class="birthday-card">
+        <h1 class="animate__animated animate__fadeInDown">🎂 生日快乐！</h1>
+
+        <div class="message animate__animated animate__fadeIn">
+            <p>特别的日子，特别的你</p>
+            <p>愿所有美好都与你相伴</p>
+        </div>
+
+        <div class="carousel animate__animated animate__fadeIn">
+            <div class="carousel-inner">
+                <div class="slide active">
+                    <img data-src="../images/gift1.webp" alt="礼物1" loading="lazy" class="lazyload">
+                </div>
+                <div class="slide">
+                    <img data-src="../images/gift2.webp" alt="礼物2" loading="lazy" class="lazyload">
+                </div>
+                <div class="slide">
+                    <img data-src="../images/gift3.webp" alt="礼物3" loading="lazy" class="lazyload">
+                </div>
+                <div class="slide">
+                    <img data-src="../images/gift4.webp" alt="礼物4" loading="lazy" class="lazyload">
+                </div>
+                <div class="slide">
+                    <img data-src="../images/gift5.webp" alt="礼物5" loading="lazy" class="lazyload">
+                </div>
+            </div>
+            <button class="carousel-btn prev">❮</button>
+            <button class="carousel-btn next">❯</button>
+            <div class="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+            </div>
+        </div>
+
+        <div class="music-control animate__animated animate__fadeIn">
+            <audio id="bgMusic" loop playsinline webkit-playsinline></audio>
+            <button id="musicBtn" class="music-btn">🎵 播放音乐</button>
+        </div>
+
+        <button id="easterEggBtn" class="easter-egg-btn animate__animated animate__fadeIn">
+            🎁 退出
+        </button>
+    </main>
+
+    <div id="easterEggModal" class="modal">
+        <div class="modal-content animate__animated animate__bounceIn">
+            <h3>🎉 发现彩蛋！</h3>
+            <p>要看看特别为你准备的惊喜吗？</p>
+            <div class="modal-actions">
+                <button id="closeModalBtn" class="modal-btn">稍后再说</button>
+                <button id="showSecretBtn" class="modal-btn primary">立即查看</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="secretPage" class="secret-page">
+        <div class="secret-content">
+            <h2>💝 专属祝福</h2>
+            <p>感谢你选择留下</p>
+            <p>愿你的每一天都如今天般灿烂</p>
+            <button id="backBtn" class="back-btn">返回</button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+<script src="../js/app.js"></script>
+</body>
+</html>

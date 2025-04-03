@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>生日祝福</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="conversation-container">
+    <div class="message-box">
+        <p class="bot-message">好朋友周星羽，这是你的几岁生日呢？</p>
+
+        <form action="gift.html" method="post" class="age-form">
+            <input type="number" name="age" min="1" max="120" required
+                   placeholder="输入你的年龄">
+            <button type="submit">提交</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
